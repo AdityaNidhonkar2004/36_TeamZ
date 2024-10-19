@@ -30,7 +30,7 @@ const SignUp = () => {
         <h2 className="text-2xl font-bold text-center mb-4">Sign Up</h2>
         <form onSubmit={handleSubmit}>
         <div className="mb-4">
-            <label className="block text-gray-700">Email</label>
+            <label className="block text-gray-700">Name</label>
             <input
               type="name"
               value={name}
