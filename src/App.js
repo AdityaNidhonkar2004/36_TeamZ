@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
-
+import './App.css'
+import Dashboard from './components/Dashboard';
+import SignIn from './components/SignIn'
+import SignUp from './components/SignUp'
+import { Route, Routes } from "react-router-dom";
+import NonCriticalErrors from './routes/NonCriticalErrors';
+import CriticalErrors from './routes/CriticalErrors';
+import Warnings from './routes/Warnings';
+import SideBar from './components/SideBar';
+import FileUpload from "../src/components/FileUpload"
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+        <div>
+        <Routes>
+        <Route path="/signin" element={<SignIn/>}></Route>
+        <Route path="/" element={<SignUp/>}></Route>
+        <Route path="/dashboard" element={<Dashboard/>}></Route>
+        <Route path="/criticalerrors" element={<CriticalErrors/>}></Route>
+        <Route path="/noncriticalerrors" element={<NonCriticalErrors/>}></Route>
+        <Route path="/warnings" element={<Warnings/>}></Route>
+        <Route path="/upload" element={<FileUpload/>}></Route>
+      </Routes> 
+        </div>
+       
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
